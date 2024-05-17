@@ -19,6 +19,7 @@ const NavbarPage = () => {
 
     return (
         <Navbar
+          isBordered 
           isMenuOpen={isMenuOpen}
           onMenuOpenChange={setIsMenuOpen}
         >
@@ -52,7 +53,7 @@ const NavbarPage = () => {
 
           <NavbarContent justify="end" className="hidden sm:flex gap-4">
           <NavbarItem>
-              <Link color="foreground" href="#">
+              <Link color="foreground" href="/">
                 Home
               </Link>
             </NavbarItem>
@@ -67,7 +68,7 @@ const NavbarPage = () => {
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link color="foreground" href="#">
+              <Link color="foreground" href="/flash-sale">
                 Flash Sale
               </Link>
             </NavbarItem>

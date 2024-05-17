@@ -2,11 +2,10 @@
 import Image from 'next/image';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import banner1 from "../assets/7022691.jpg"
 
 const Banner = () => {
     return (
-        <div>
+        <div className='w-[90%] mx-auto mt-5'>
             <Carousel>
             <div className='sm:h-[500px]'>
                 <Image 
