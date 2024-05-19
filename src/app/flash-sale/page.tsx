@@ -1,4 +1,5 @@
 import FlashSaleCard from '@/components/ui/FlashSaleCard';
+import { TFlashSale } from '@/types';
 import { Button } from '@nextui-org/button';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
