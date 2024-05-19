@@ -14,9 +14,12 @@ const PopularProductsCard = ({product}: {product: TProduct}) => {
           </CardHeader>
           <CardBody className="overflow-visible py-2">
             <h4 className="font-semibold text-xl">{product.title}</h4>
-            <div className="flex items-center gap-2">
-                <p className=" text-red-400 font-medium mt-1 line-through">${product.price}</p>
-                <p className=" font-medium mt-1">${product.discountPrice}</p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                  <p className=" text-red-400 font-medium mt-1 line-through">${product.price}</p>
+                  <p className=" font-medium mt-1">${product.discountPrice}</p>
+              </div>
+              <p>Ratings: <span className="font-semibold">{product.ratings}</span></p>
             </div>
           </CardBody>
         </Card>
