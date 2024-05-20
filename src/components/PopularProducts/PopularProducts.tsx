@@ -14,7 +14,7 @@ const PopularProductsPage = async () => {
     const products = await res.json()
 
     return (
-        <div className='w-[80%] mx-auto'>
+        <div className='w-[80%] mx-auto my-20'>
             <div className='flex justify-between'>
                 <div>
                     <h1 className='text-2xl font-bold'>Most Popular Products</h1>

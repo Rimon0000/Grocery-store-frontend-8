@@ -4,7 +4,7 @@ import CategoryCard from "../ui/CategoryCard";
 const TopCategories = async() => {
     const res = await fetch("http://localhost:5000/categories")
     const categories = await res.json()
-    // console.log(categories);
+
     return (
         <div className="w-[90%] mx-auto my-14">
             <h1 className="text-4xl text-center font-bold">Top Categories</h1>
