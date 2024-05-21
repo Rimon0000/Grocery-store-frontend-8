@@ -24,3 +24,4 @@ export type TProduct = {
     ratings: number
     description: string
 }
+
