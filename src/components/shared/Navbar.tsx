@@ -78,8 +78,8 @@ const NavbarPage = () => {
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link color="foreground" href="#">
-                Contact Us
+              <Link color="foreground" href="/dashboard/fish">
+                Dashboard
               </Link>
             </NavbarItem>
           </NavbarContent>
