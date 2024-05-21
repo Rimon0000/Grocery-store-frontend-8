@@ -1,21 +1,21 @@
 "use client";
 
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
 import Image from 'next/image';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import NextLink from 'next/link';
+
 
 
 const NavbarPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [currentPath, setCurrentPath] = useState("");
 
-  const menuItems = [
-    "Home",
-    "Category",
-    "Products",
-    "Flash Sale",
-    "About Us",
-    "Contact Us",
-  ];
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+  
+  
 
     return (
         <Navbar
@@ -52,38 +52,27 @@ const NavbarPage = () => {
           </NavbarContent>
 
           <NavbarContent justify="end" className="hidden sm:flex gap-4">
-          <NavbarItem>
-              <Link color="foreground" href="/">
-                Home
-              </Link>
+            <NavbarItem isActive={currentPath === "/"}>
+                <Link href="/" color="foreground">Home</Link>
             </NavbarItem>
-            <NavbarItem isActive>
-              <Link href="#" aria-current="page">
-                Categories
-              </Link>
+
+            <NavbarItem isActive={currentPath === "/categories"}>
+                <Link href="/categories" color="foreground">Categories</Link>
             </NavbarItem>
-            <NavbarItem>
-              <Link color="foreground" href="/fish">
-                products
-              </Link>
+
+            <NavbarItem isActive={currentPath === "/fish"}>
+                <Link href="/fish" color="foreground">Products</Link>
             </NavbarItem>
-            <NavbarItem>
-              <Link color="foreground" href="/flash-sale">
-                Flash Sale
-              </Link>
+
+            <NavbarItem isActive={currentPath === "/flash-sale"}>
+                <Link href="/flash-sale" color="foreground">Flash Sale</Link>
             </NavbarItem>
-            <NavbarItem>
-              <Link color="foreground" href="#">
-                About Us
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link color="foreground" href="/dashboard/fish">
-                Dashboard
-              </Link>
+
+            <NavbarItem isActive={currentPath === "/dashboard/all-products"}>
+                <Link href="/dashboard/all-products" color="foreground">Dashboard</Link>
             </NavbarItem>
           </NavbarContent>
-    
+
           <NavbarContent justify="end">
             <NavbarItem className="hidden lg:flex">
               <Link href="#">Login</Link>
@@ -96,20 +85,25 @@ const NavbarPage = () => {
           </NavbarContent>
     
           <NavbarMenu>
-            {menuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                  className="w-full"
-                  color={
-                    index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-                  }
-                  href="#"
-                  size="lg"
-                >
-                  {item}
-                </Link>
-              </NavbarMenuItem>
-            ))}
+            <NavbarItem isActive={currentPath === "/"}>
+                <Link href="/" color="foreground">Home</Link>
+            </NavbarItem>
+
+            <NavbarItem isActive={currentPath === "/categories"}>
+                <Link href="/categories" color="foreground">Categories</Link>
+            </NavbarItem>
+
+            <NavbarItem isActive={currentPath === "/fish"}>
+                <Link href="/fish" color="foreground">Products</Link>
+            </NavbarItem>
+
+            <NavbarItem isActive={currentPath === "/flash-sale"}>
+                <Link href="/flash-sale" color="foreground">Flash Sale</Link>
+            </NavbarItem>
+
+            <NavbarItem isActive={currentPath === "/dashboard/all-products"}>
+                <Link href="/dashboard/all-products" color="foreground">Dashboard</Link>
+            </NavbarItem>
           </NavbarMenu>
         </Navbar>
     );
